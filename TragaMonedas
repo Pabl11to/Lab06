@@ -1,0 +1,33 @@
+import java.util.Random;
+
+class HiloTragamonedas extends Thread {
+    private static final String[] simbolos = {"🍒", "🍋", "🔔", "⭐", "7️⃣"};
+
+    @Override
+    public void run() {
+        Random random = new Random();
+        String[] resultado = new String[3];
+
+        System.out.println("Girando la máquina tragamonedas...");
+        try {
+            Thread.sleep(1000); // Simula tiempo de espera
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // Genera tres símbolos aleatorios
+        for (int i = 0; i < 3; i++) {
+            resultado[i] = simbolos[random.nextInt(simbolos.length)];
+        }
+
+        // Muestra el resultado
+        System.out.println("Resultado: [" + resultado[0] + "] [" + resultado[1] + "] [" + resultado[2] + "]");
+
+        // Verifica si hay un premio
+        if (resultado[0].equals(resultado[1]) && resultado[1].equals(resultado[2])) {
+            System.out.println("¡Felicidades! ¡Ganaste!");
+        } else {
+            System.out.println("Suerte para la próxima.");
+        }
+    }
+}
