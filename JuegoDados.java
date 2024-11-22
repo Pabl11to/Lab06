@@ -4,12 +4,12 @@ class HiloDados extends Thread {
     @Override
     public void run() {
         Random random = new Random();
-        int dado1 = random.nextInt(6) + 1; // Genera un número entre 1 y 6
+        int dado1 = random.nextInt(6) + 1; 
         int dado2 = random.nextInt(6) + 1;
 
         System.out.println("Lanzando dados...");
         try {
-            Thread.sleep(1000); // Simula tiempo de espera
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
